@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Travel Time Calculator</title>
+  </head>
+  <body>
+    <h1>Travel Time Calculator</h1>
+    <p>Enter the names of two cities and select a mode of transportation to calculate the travel time:</p>
+    <form>
+      <label for="city1">City 1:</label>
+      <input type="text" id="city1" name="city1"><br><br>
+      <label for="city2">City 2:</label>
+      <input type="text" id="city2" name="city2"><br><br>
+      <label for="modeOfTransport">Mode of transportation:</label>
+      <select id="modeOfTransport" name="modeOfTransport">
+        <option value="car">Car</option>
+        <option value="train">Train</option>
+        <option value="plane">Plane</option>
+      </select><br><br>
+      <input type="button" value="Calculate" onclick="calculateTravelTime()">
+    </form>
+    <br><br>
+    <div id="result"></div>
+    <script>
+      const cityDistances = {
+        "Belgrade": {
+          "Amsterdam": 1840,
+          "Berlin": 1286,
+          "Barcelona": 2418,
+          "Paris": 1663,
+          "London": 2219,
+          "Praugue": 1125,
+          "Istanbul": 930
+        },
+        "Amsterdam": {
+          "Belgrade": 1840,
+          "Berlin": 652,
+          "Barcelona": 1500,
+          "Paris": 431,
+          "London": 402,
+          "Praugue": 804,
+          "Istanbul": 2513
+        },
+        "Berlin": {
+          "Belgrade": 1286,
+          "Amsterdam": 652,
+          "Barcelona": 1494,
+          "Paris": 1051,
+          "London": 930,
+          "Praugue": 280,
+          "Istanbul": 1704
+        },
+        "Barcelona": {
+          "Belgrade": 2418,
+          "Amsterdam": 1500,
+          "Berlin": 1494,
+          "Paris": 831,
+          "London": 1133,
+          "Praugue": 1526,
+          "Istanbul": 2987
+        },
+        "Paris": {
+          "Belgrade": 1663,
+          "Amsterdam": 431,
+          "Berlin": 1051,
+          "Barcelona": 831,
+          "London": 344,
+          "Praugue": 1038,
+          "Istanbul": 2483
+        },
+        "London": {
+          "Belgrade": 2219,
+          "Amsterdam": 402,
+          "Berlin": 930,
+          "Barcelona": 1133,
+         
